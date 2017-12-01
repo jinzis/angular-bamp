@@ -1,0 +1,46 @@
+<div class="bmap-city">
+    <span class="search-title" ng-click="showCityList()">
+        <span class="current-city">{{currentCity}}</span>
+        <sapn class={{arrow}}></span>
+    </span>
+    <div class="city-content" ng-show="showCity">
+        <div class="city-title">
+            <p>城市列表</p>
+            <i class="close" ng-click="closeCity()">×</i>
+        </div>
+        <div class="city-search">
+            <p class="current-city">
+                <span>当前城市：</span><span>{{currentCity}}</span><span class="default" ng-if="!deleteCityShow" ng-click="setDefaultCity()">[设为默认城市]</span>
+            </p>
+            <div class="search">
+                <input type="text" placeholder="请输入城市名"><button>搜索</button>
+            </div>
+        </div>
+        <p class="default-city" ng-if="deleteCityShow">
+            <span>您默认的城市是：</span><span>{{defaultCity}}</span><span class="delete" ng-click="deleteDefaultCity()">[删除]</span>
+        </p>
+        <dl class="hot-city">
+            <dd class="all">
+                <a href="javascript:void(0)" ng-click="changeCurrentCity('全国')">全国</a>
+            </dd>
+            <dd ng-repeat="city in hotCity">
+                <a href="javascript:void(0)" ng-click="changeCurrentCity(city)">{{city}}</a>
+            </dd>
+        </dl>
+        <dl class="word-search" du-scroll-container="container">
+            <dd ng-repeat="word in words" >
+                <a ng-href="#{{word}}" du-smooth-scroll du-scrollspy>{{word}}</a>
+            </dd>
+        </dl>
+        <div class="city-list">
+            <div class="city-list-scroll" id="container" du-scroll-container>
+                <dl ng-repeat="cities in cityList" id={{cities.word}}>
+                    <dd class="city-word">{{cities.word}}</dd>
+                    <dd class="city-list-item">
+                        <a href="javascript:void(0)" ng-repeat="city in cities.city" ng-click="changeCurrentCity(city)">{{city}}</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

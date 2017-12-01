@@ -1,0 +1,38 @@
+<div class="bmap-track-replay">
+    <div id="replayMap">
+
+    </div>
+    <div class="path-replay-control">
+        <!-- <slider
+            id="track-slider" 
+            ng-model="trackSlider.sliderValue" 
+            min="trackSlider.min" 
+            max="trackSlider.max" 
+            rangeHighlights="trackSlider.rangeHighlights" 
+            on-stop-slide="onChangeTrackSlider($event,value)">
+        </slider> -->
+        <rzslider
+            rz-slider-model="slider.value"
+            rz-slider-options="slider.options">
+        </rzslider>
+        <div class="control-btn">
+            <img 
+                class="fast-reverse" 
+                ng-src={{reverseStyle.src}}
+                ng-style="reverseStyle.style"
+                alt="减速" 
+                title="减速"  
+                ng-click="fastReverse()">
+            <img class="stop" src="src/images/iconfont-zanting.png" alt="暂停" title="暂停"   ng-if="!playFlag" ng-click="pause()">
+            <img class="play" src="src/images/iconfont-player.png" alt="播放" title="播放"  ng-if="playFlag" ng-click="play()">
+            <img 
+                class="fast-forward" 
+                ng-src={{forwardStyle.src}}
+                ng-style="forwardStyle.style"
+                alt="加速" 
+                title="加速" 
+                ng-click="fastForward()">
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度地图</title>
+    <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
+    <link rel="stylesheet" href="vendor/angularjs-slider/dist/rzslider.css"/>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="vendor/foundation-sites/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="dist/style/city.css">
+    <link rel="stylesheet" href="dist/style/view-search.css">
+    <link rel="stylesheet" href="dist/style/track-replay.css">
+    <link rel="stylesheet" href="dist/style/set-marker.css">
+</head>
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<!-- <script src="vendor/angular-bootstrap/ui-bootstrap.js"></script> -->
+<script src="vendor/angular-scroll/angular-scroll.min.js"></script>
+<script src="vendor/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+<script src="vendor/angular-bootstrap-slider/slider.js"></script>
+<script src="vendor/foundation-sites/dist/js/foundation.min.js"></script>
+<script src="vendor/angularjs-slider/dist/rzslider.min.js"></script>
+<script src="src/directive/directive.module.js"></script>
+<script src="src/directive/MapDirective.js"></script>
+<script src="src/service/service.module.js"></script>
+<script src="src/service/CommonService.js"></script>
+<script src="src/service/TrafficService.js"></script>
+<script src="src/service/TransformService.js"></script>
+<script src="src/service/OverlayService.js"></script>
+<script src="src/directive/city/CityDirective.js"></script>
+<script src="src/directive/view-search/ViewSearchDirective.js"></script>
+<script src="src/directive/marker-clusterer/MarkerClustererDirective.js"></script>
+<script src="src/directive/track-replay/TrackReplayDirective.js"></script>
+<script src="src/directive/set-marker/SetMarkerDirective.js"></script>
+<body> 
+    <div ng-app="BmapDirective">
+        <p>地图展示</p>
+        <angular-bmap version="2.0" apikey="fuF2QXcbY8r3NlFIIoGeYpPDdBD3zzFk" eleid="bmap" style="height:500px;width:1000px"></angular-bmap>
+        <angular-bmap-city version="2.0" apikey="fuF2QXcbY8r3NlFIIoGeYpPDdBD3zzFk" city="沈阳"></angular-bmap-city>
+        <angular-bmap-view-search version="2.0" apikey="fuF2QXcbY8r3NlFIIoGeYpPDdBD3zzFk" city="沈阳"></angular-bmap-view-search>
+        <p>聚合点123445</p>
+        <angular-bmap-marker-clusterer version="2.0" apikey="fuF2QXcbY8r3NlFIIoGeYpPDdBD3zzFk" style="height:500px;width:1000px"></angular-bmap-marker-clusterer>
+        <p>轨迹回放</p>
+        <angular-bmap-track-replay version="2.0" apikey="fuF2QXcbY8r3NlFIIoGeYpPDdBD3zzFk" style="height:500px;width:1000px"></angular-bmap-track-replay>
+        <p style="margin-top:120px;">地图取点</p>
+        <angular-bmap-set-marker version="2.0" apikey="fuF2QXcbY8r3NlFIIoGeYpPDdBD3zzFk" style="height:500px;width:1000px"></angular-bmap-set-marker>
+    </div>
+</body>
+</html>

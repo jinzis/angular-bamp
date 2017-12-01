@@ -1,0 +1,28 @@
+<div class="bmap-view-search">
+    <div class="view-search" ng-click="sightSearch()"><img src="src/images/searchIcon.png" alt="视野内搜索">视野内搜索</div>
+    <div class="sight-list" ng-show="sightListShow">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr ng-repeat="aroundPoint in sFacility">
+                <td><img alt="" src={{aroundPoint.src}}></td>
+                <td>
+                    <a href="javascript:void(0)" ng-repeat="point in aroundPoint.around" ng-click="viewSightSearch(point)">{{point}}</a>
+                </td>
+            </tr>
+        </table>
+        <div class="map-sightsearch-btn">
+            <input class="sigsch-text" type="text" value="" ng-model="keywords" />
+            <button class="btn"
+                ng-click="viewSightSearch(keywords)" ng-disabled="btnDisable">查询</button>
+        </div>
+    </div>
+    <!--视野搜索结果-->
+    <div class="sight-search-result" ng-show="winSearchResultShow">
+        <div class="result-top">
+            <span>在屏幕范围内搜索</span>
+            <span class="close-result" ng-click="winSearchResultClosed()">×</span>
+        </div>
+        <div id="r-result">
+
+        </div>
+    </div>
+</div>

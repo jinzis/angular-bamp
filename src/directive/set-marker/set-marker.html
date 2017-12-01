@@ -1,0 +1,32 @@
+<div class="bmap-set-marker">
+    <div class="search input-group" >
+        <input class="form-control" type="text" placeholder="请输入关键字" ng-model="city">
+        <button class="btn btn-primary" ng-click="localSearch()">搜索</button>
+    </div>
+    <div id="setMarkerMap"></div>
+    <div class="result">
+        <div class="result-up">
+            <div class="form-group col-md-6">
+                <label for="lon" class="control-label col-md-2">经度：</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="lon" placeholder="经度" ng-value="lon" ng-readonly="true">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lat" class="control-label col-md-2">纬度：</label>
+                <div class="col-md-10">
+                <input type="text" class="form-control" id="lat" placeholder="纬度" ng-value="lat" ng-readonly="true">
+            </div>
+            </div>
+        </div>
+        <div class="result-down">
+            <div class="form-group col-md-6">
+                <label for="address" class="control-label col-md-2 ">详细地址：</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="address" placeholder="详细地址" ng-value="address" ng-readonly="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

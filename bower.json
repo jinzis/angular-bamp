@@ -1,0 +1,30 @@
+{
+  "name": "angular-bmap",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jinxin <jinxin@aerozhonghuan.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-scroll": "^1.0.2",
+    "jquery": "^3.2.1",
+    "angular-bootstrap-slider": "^0.1.28",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.5.0",
+    "angularjs-slider": "^6.4.1",
+    "normalize-css": "^7.0.0",
+    "foundation-sites": "^6.4.3",
+    "angular-mocks": "^1.6.7"
+  }
+}

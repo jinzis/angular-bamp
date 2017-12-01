@@ -1,0 +1,187 @@
+
+$base-color: #5d9beb;
+.bmap-city{
+    font-size: inherit;
+    .search-title{
+        display: inline-block;
+        border: 1px solid #999;
+        padding: 3px;
+        font-size: 0;
+        cursor: pointer;
+        .current-city{
+            display: inline-block;
+            font-size: 14px;
+            user-select: none;
+        }
+        .arrow-down,.arrow-up{
+            display: inline-block;
+            height: 0;
+            width: 0;
+            border: 5px solid #999;
+            margin-left:2px; 
+        }
+        .arrow-down{
+            border-bottom-color:transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+        .arrow-up{
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+    }
+    .city-content{
+        max-width: 450px;
+        height: 380px;
+        border: 1px solid #999;
+        box-shadow: 1px 1px 1px 1px #d0d4da;
+        margin-top: 3px;
+        overflow: hidden;
+        a{
+            text-decoration: none;
+            color: $base-color;
+        }
+        .city-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $base-color;
+            color: #fff;
+            padding: 5px;
+            p{
+                margin: 0;
+                font-size: 14px;
+            }
+            i{
+                font-style: normal;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+        .city-search{
+            padding: 0 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .current-city{
+                span{
+                    font-size: 14px;
+                    margin-left: 5px;
+                    &:nth-child(1){
+                        margin: 0;
+                    }
+                }
+                .default{
+                    color: $base-color;
+                    cursor: pointer;
+                }
+            }
+            .search{
+                line-height: 25px;
+                height: 25px;
+                input{
+                    width: 100px;
+                    line-height: inherit;
+                    margin-right: 5px;
+                    vertical-align: middle;
+                    text-indent: 4px;
+                }
+                button{
+                    width: 50px;
+                    line-height: inherit;
+                    vertical-align: middle;
+                    text-align: center;
+                }
+            }
+        }
+        .default-city{
+            padding: 0 20px;
+            span{
+                font-size: 14px;
+                margin-left: 5px;
+                &:nth-child(1){
+                    margin: 0;
+                }
+            }
+            .delete{
+                color: $base-color;
+                cursor: pointer;
+            }
+        }
+        .hot-city,.word-search{
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            dd{
+                margin: 0;
+                font-size: 14px;
+                a{
+                    color: #333;
+                    padding: 3px;
+                    &:hover{
+                        color: #fff;
+                        background-color: $base-color;
+                    }
+                }
+            }
+            .all{
+                font-weight: bold;
+                a:hover{
+                    background-color: red;
+                }
+            }
+        }
+        .word-search{
+            dd{
+                a{
+                    color: $base-color;
+                }
+            }
+        }
+        .city-list{
+            margin-top: 10px;
+            padding: 0 20px 20px 15px;
+            .city-list-scroll{
+                height: 185px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                dl{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    margin: 0;
+                    dd{
+                        margin: 0;
+                        padding: 5px;
+                        font-size: 14px;
+                        a{
+                            color: #333;
+                            padding: 5px;
+                            &:hover{
+                                color: #fff;
+                                background-color: $base-color;
+                            }
+                        }
+                    }
+                    .city-word{
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #999;
+                        margin-right: 10px;
+                    }
+                    .city-list-item{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
