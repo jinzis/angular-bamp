@@ -58,7 +58,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox', 'Chrome'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
@@ -71,9 +71,10 @@ module.exports = function(config) {
     plugins: [
 	  'karma-chrome-launcher',
 	  'karma-firefox-launcher',
-      'karma-jasmine',
+    'karma-jasmine',
 	  'karma-junit-reporter',
-	  'karma-coverage'
+    'karma-coverage',
+    'karma-read-json'
     ],
 
     junitReporter: {

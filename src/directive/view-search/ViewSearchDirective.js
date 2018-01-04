@@ -70,7 +70,19 @@
                         }
                         console.log(scope)
                         var local = new BMap.LocalSearch(scope.city, options);
-                        local.search(address);
+                        local.search(address, {forceLocal: true});//forceLocal 是否将搜索范围约束在当前城市
+                        // var options = {
+                        //     query: address,
+                        //     region: scope.city,
+                        //     ak: 'FEaNK939Yh7BmnZN7mGBuQDXhmooG89V'
+                        // }
+                        // BmapCommonService.searchInCity(options)
+                        // .then(function(data){
+                        //     console.log(data);
+                        // })
+                        // .catch(function(err){
+
+                        // })
                         scope.sightListShow = false;
                     }
                     

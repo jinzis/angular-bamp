@@ -10,10 +10,9 @@
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-test/protractor.conf.js"
+    "webdriver:update": "gulp webdriver:update",
+    "webdriver:start": "gulp webdriver:start",
+    "test:auto": "gulp test:auto"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,7 @@
     "browser-sync": "^2.18.13",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
+    "gulp-angular-protractor": "^1.1.1",
     "gulp-bump": "^2.8.0",
     "gulp-cache": "^1.0.1",
     "gulp-clean": "^0.3.2",
@@ -33,6 +33,7 @@
     "gulp-karma": "0.0.5",
     "gulp-load-plugins": "^1.5.0",
     "gulp-minify-css": "^1.2.4",
+    "gulp-protractor": "^4.1.0",
     "gulp-remove-use-strict": "0.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
@@ -49,6 +50,8 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.1",
     "karma-junit-reporter": "^1.2.0",
-    "protractor": "^5.2.0"
+    "karma-read-json": "^1.1.0",
+    "protractor": "^5.2.0",
+    "protractor-jasmine2-html-reporter": "0.0.7"
   }
 }

@@ -4,6 +4,12 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var Server = require('karma').Server;
+var protractor = require("gulp-protractor").protractor;
+var webdriverStandalone = require("gulp-protractor").webdriver_standalone;
+// Download and update the selenium driver
+// var webdriverUpdate = require('gulp-protractor').webdriver_update;
+// var gulpProtractorAngular = require('gulp-angular-protractor');
+
 
 /**
  * Run a webserver (with LiveReload)
@@ -89,13 +95,45 @@ gulp.task('scripts',function(){
 
 
 /**
- * Run test once and exit
+ * Run test 
  */
 gulp.task('test', function (done) {
   new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
+    configFile: __dirname + '/karma.conf.js'
   }, done).start();
+});
+gulp.task('webdriver:start', webdriverStandalone); 
+gulp.task('protractor:auto-run', protractorAutoRun); 
+// start the selenium webdriver
+gulp.task('webdriver:update', webdriverUpdate);
+function protractorAutoRun() { 
+    gulp.src("./test/e2e/*.js") 
+    .pipe(
+        protractor(
+            { 
+                configFile: "./protractor.conf.js", 
+                args: ['--baseUrl', 'http://localhost:4444/wd/hub'] 
+            }
+        )
+    ) 
+    .on('error', function(e) { throw e }) 
+}
+
+// gulp.task('test:auto', gulp.series('protractor:auto-run'));
+
+gulp.task('e2e', function(callback) {
+    gulp
+        .src(['test/e2e/add.js'])
+        .pipe(gulpProtractorAngular({
+            'configFile': 'protractor.conf.js',
+            'debug': false,
+            'args': ['--baseUrl', 'http://127.0.0.1:8000'],
+            'autoStartStopServer': true
+        }))
+        .on('error', function(e) {
+            console.log(e);
+        })
+        
 });
 
 /**

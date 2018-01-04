@@ -5,7 +5,7 @@
     'use strict'
     angular.module('BmapService')
     .service('BmapCommonService', BmapCommonService)
-    function BmapCommonService($window, $document, $q) {
+    function BmapCommonService($window, $document, $q, $http, $sce) {
         var promise,
             map;
         /**
@@ -272,6 +272,38 @@
                     alert('failed'+this.getStatus());
                 }        
             },{enableHighAccuracy: true})
+        }
+
+        /**
+         * 行政区划区域检索
+         * @param { String } query 检索关键字
+         * @param { String } tag 检索分类
+         * @param { String } region 检索行政区划区域 北京/131
+         * @param { Boolean } city_limit 区域数据召回限制，为true时，仅召回region对应区域内数据
+         * @param { Number } coord_type 坐标类型，1（wgs84ll即GPS经纬度），2（gcj02ll即国测局经纬度坐标），3（bd09ll即百度经纬度坐标），4（bd09mc即百度米制坐标）
+         * @param { Number } page_size 每页显示条数
+         * @param { Number } page_num 分页页码
+         * @param { String } ak 秘钥
+         */
+        this.searchInCity = function(optioins){
+            
+            var city_limit = optioins.city_limit ? optioins.city_limit : true;
+            var coord_type = optioins.coord_type ? optioins.coord_type : 3;
+            var page_size = optioins.page_size ? optioins.page_size : 10;
+            var page_num = optioins.page_num ? optioins.page_num : 0;
+
+            var url = 
+                'http://api.map.baidu.com/place/v2/search?query=' 
+                + optioins.query + '&tag=' 
+                + optioins.tag + '&region='
+                + optioins.region + '&city_limit=' 
+                + city_limit + '&output=json&coord_type='
+                + coord_type + '&page_size='
+                + page_size + '&page_num'
+                + page_num + '&ak='
+                + optioins.ak;
+
+            return $http({method: 'JSONP',url:$sce.trustAsResourceUrl(url)});
         }
     }
 })();
